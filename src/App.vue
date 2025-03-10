@@ -1,26 +1,23 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <the-navbar></the-navbar>
+  <div class="container with-nav">
+    <router-view />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { useStore } from 'vuex'
+import TheNavbar from './components/TheNavbar'
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+  setup() {
+    const store = useStore()
+    store.state.tasks = JSON.parse(localStorage.getItem('tasks'))
+  },
+  components: { TheNavbar }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
