@@ -10,9 +10,14 @@ import { useStore } from 'vuex'
 import TheNavbar from './components/TheNavbar'
 
 export default {
-  setup() {
+  setup () {
     const store = useStore()
-    store.state.tasks = JSON.parse(localStorage.getItem('tasks'))
+    const tasks = JSON.parse(localStorage.getItem('tasks'))
+    if (Array.isArray(tasks)) {
+      store.state.tasks = tasks
+    } else {
+      store.state.tasks = []
+    }
   },
   components: { TheNavbar }
 }
