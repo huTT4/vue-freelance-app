@@ -1,8 +1,12 @@
 # vue-freelance-app
 
+<h1>https://vue-freelance-app-demo-deploy.web.app/</h1>
+
 ## Project setup
 ```
 npm install
+or
+npm install --legacy-peer-deps
 ```
 
 ### Compiles and hot-reloads for development
