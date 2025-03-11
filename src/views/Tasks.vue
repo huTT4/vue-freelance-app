@@ -32,8 +32,8 @@ export default {
     const router = useRouter()
     const tasks = store.state.tasks
 
-    const isThereTasks = computed(() => tasks.length > 0 )
-    const isActiveTasks = store.getters.isActiveTasks
+    const isThereTasks = computed(() => tasks.length > 0)
+    const isActiveTasks = computed(() => store.getters.isActiveTasks)
 
     const lookTask = (id) => router.push('/task/' + id)
     const deleteTask = (id) => store.dispatch('deleteTask', id)
