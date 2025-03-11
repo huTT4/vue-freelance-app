@@ -2,7 +2,7 @@
   <div class="card" v-if="task">
     <h2>{{ task.title }}</h2>
     <p><strong>Статус</strong>: <AppStatus :type="task.type" /></p>
-    <p><strong>Дэдлайн</strong>: {{ task.date }}</p>
+    <p><strong>Дэдлайн</strong>: {{ new Date(task.date).toLocaleDateString() }}</p>
     <p><strong>Описание</strong>: {{ task.descr }}</p>
     <div>
       <button class="btn" @click="pending">Взять в работу</button>

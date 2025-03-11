@@ -10,7 +10,7 @@
       <p>
         <strong>
           <small>
-            {{ task.date }}
+            {{ new Date(task.date).toLocaleDateString() }}
           </small>
         </strong>
       </p>
